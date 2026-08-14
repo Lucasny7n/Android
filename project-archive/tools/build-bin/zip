@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Compatibility shim for the sole zip invocation in Floppy's AnyKernel package
+# stage.  The host has 7-Zip but not Info-ZIP; this preserves the official
+# directory and exclusion inputs without modifying host packages.
+set -euo pipefail
+
+archive=
+declare -a inputs=() excludes=()
+excluding=0
+for arg in "$@"; do
+    if (( excluding )); then
+        excludes+=("$arg")
+        continue
+    fi
+    case "$arg" in
+        -r|-q|-9|-r9|-9r|-rq|-qr) ;;
+        -x) excluding=1 ;;
+        -*) printf 'BLOCKED: opção zip não suportada pelo shim: %s\n' "$arg" >&2; exit 2 ;;
+        *)
+            if [[ -z "$archive" ]]; then
+                archive=$arg
+            else
+                inputs+=("$arg")
+            fi
+            ;;
+    esac
+done
+[[ -n "$archive" && ${#inputs[@]} -gt 0 ]] || { printf 'BLOCKED: argumentos zip inválidos.\n' >&2; exit 2; }
+args=(a -tzip -mx=9 "$archive")
+for item in "${excludes[@]}"; do
+    args+=("-xr!$item")
+done
+exec 7z "${args[@]}" "${inputs[@]}"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Local build shim: preserve two logical CPUs for the interactive desktop.
+printf '%s\n' 10

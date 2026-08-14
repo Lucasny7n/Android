@@ -1,0 +1,10 @@
+/src/floppy/
+/src/references/proton/
+/src/references/xfwdrev-ex2100/
+/build/
+/output/
+/packages/
+/logs/
+/tools/toolchains/
+__pycache__/
+/evidence/runtime/baseline-device/

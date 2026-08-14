@@ -1,0 +1,31 @@
+* commit cc6540be7336f866e02a39467fb63f990f2104a9 (HEAD -> floppy-exynos2100-g3d-1092-test)
+| Author:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+| AuthorDate: 2026-08-13 04:04:26 -0300
+| Commit:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+| CommitDate: 2026-08-13 04:04:26 -0300
+| 
+|     gpu: fail probe when CAL OPP validation fails
+| 
+* commit c2fcc90010c078c14bf87aad38f2c235c65524d1
+| Author:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+| AuthorDate: 2026-08-13 04:03:00 -0300
+| Commit:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+| CommitDate: 2026-08-13 04:03:00 -0300
+| 
+|     gpu: validate FVMAP 1092 maximum rate
+| 
+* commit eeaf8714c7ec6c5c16c38df712797847272cb2fe
+| Author:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+| AuthorDate: 2026-08-13 03:51:18 -0300
+| Commit:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+| CommitDate: 2026-08-13 03:51:18 -0300
+| 
+|     gpu: expose 1092 MHz DVFS ceiling and locks
+| 
+* commit 78ba9c74292f66bb4200c6dfa839cbb066c7b3fd
+  Author:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+  AuthorDate: 2026-08-13 03:51:10 -0300
+  Commit:     Codex WorkspaceAI <codex-workspaceai@local.invalid>
+  CommitDate: 2026-08-13 03:51:10 -0300
+  
+      gpu: add guarded 1092 MHz G3D FVMAP entry

@@ -1,0 +1,10 @@
+cc6540be7336f866e02a39467fb63f990f2104a9 refs/heads/floppy-exynos2100-g3d-1092-test
+af9e70e6af7aa7f66903d883cd677b9147424ed1 refs/heads/floppy-exynos2100-oc-build
+af9e70e6af7aa7f66903d883cd677b9147424ed1 refs/heads/floppy-main
+af9e70e6af7aa7f66903d883cd677b9147424ed1 refs/remotes/origin/floppy-main
+98d3311b470ebb33994cc2bcde214941dd742dac refs/tags/flop-v1.0
+a24d92a95abf1708998b3bf7f88690cd3acbcd86 refs/tags/flop-v1.0.1
+450f0a8917c5350fe0a0ce05db29f8fabb63eca7 refs/tags/flop-v1.0.2
+f684a9c2f917caee6abd72c9b4a536e4bbcb70c1 refs/tags/flop-v1.1
+ea9700a6bda08675b23c6843169e1de679855d9a refs/tags/flop-v1.1.1
+3c8fa1191537d5b1857fefaea38fc0e264a392f3 refs/tags/flop-v1.1.2

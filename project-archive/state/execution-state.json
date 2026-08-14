@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "task_id": "codex-floppy-exynos2100-oc-20260813",
+  "updated_at": "2026-08-13T04:25:00-03:00",
+  "phase": "FASE 15 - finalização; GPU1092 experimental construída e empacotada",
+  "project_root": "/home/lucas/Área de trabalho/WorkspaceAI/Codex/02-Projects/Floppy-Exynos2100-OC",
+  "base": {
+    "repository": "https://github.com/FlopKernel-Series/flop_exynos2100_kernel.git",
+    "branch": "floppy-main",
+    "commit": "af9e70e6af7aa7f66903d883cd677b9147424ed1"
+  },
+  "reference": {
+    "repository": "https://github.com/ProtonKernel/Proton.git",
+    "branch": "testing",
+    "commit": "79d7da625ff3fbfa0c84cdedb07a4dcdc055baf4",
+    "audit": "27 candidate groups, PORT=0"
+  },
+  "device_evidence": {
+    "path": "evidence/runtime/baseline-device/s21-exynos2100-RQCRA01QZ9J-2026-08-13T03_28_30-03_00",
+    "integrity": "PASS: 12 files passed SHA256SUMS",
+    "model": "SM-G991B / o1s / Exynos 2100",
+    "g3d_baseline": "10 levels; 949000 kHz at 825000 uV; gpu_uv_percent=0"
+  },
+  "experimental_kernel": {
+    "worktree": "build/floppy-gpu1092-source",
+    "branch": "floppy-exynos2100-g3d-1092-test",
+    "commit": "cc6540be7336",
+    "target_rate_khz": 1092000,
+    "pll": "M=84 P=2 S=0, 26 MHz reference",
+    "initial_voltage_uv": 925000,
+    "status": "STATIC PASS / BUILD PASS / RUNTIME NOT TESTED"
+  },
+  "completed": [
+    "WorkspaceAI policy, migration, baseline, skills and Proton audit preserved",
+    "root device evidence integrity and non-UV FVMAP curve validated",
+    "FVMAP/CAL/VCLK/ACPM/RA path investigated and documented",
+    "guarded 11th G3D FVMAP entry, shadow VCLK LUT, PLL, DVFS, PM QoS, locks and thermal integration committed",
+    "official clean kclq build passed with Android clang r596125 in 7m53s",
+    "static adversarial validation, modules, symbols, DTB and package checks passed",
+    "experimental AnyKernel/OrangeFox ZIP and 949 rollback ZIP produced and checksummed",
+    "read-only post-flash monitor and progressive test plan updated"
+  ],
+  "pending": [
+    "human-reviewed manual OrangeFox installation only",
+    "progressive runtime verification of ACPM acceptance, physical clock, voltage, thermal and stability",
+    "runtime verification of KSU Next, SUSFS and all selected Mali KMDs"
+  ],
+  "blockers": [
+    "No runtime proof that production ACPM accepts FREQ_REQ 1092000",
+    "No runtime proof that 925000 uV is stable or thermally sustainable"
+  ],
+  "build": {
+    "status": "PASS experimental GPU1092",
+    "command": "./scripts/build-gpu1092-experimental.sh",
+    "log": "logs/build/build-gpu1092-2026-08-13T04_06_32-03_00.log",
+    "toolchain": "Android clang 22.0.2 r596125; PGO+BOLT+Full LTO+MLGO",
+    "package": "packages/Floppy_v1.1.2-KSUNext-SUSFS-exynos2100-GPU1092-EXPERIMENTAL-20260813-0406.zip",
+    "package_sha256": "e737a647875cccc6d1a27de6c9396c59b41b5ffca608e72ffc6634772329d8e7",
+    "rollback_package": "packages/Floppy_v1.1.2-KSUNext-SUSFS-exynos2100-949-ROLLBACK-20260813-0242.zip",
+    "rollback_sha256": "3db0228e2329239126d8201e8068de76c8834d74eb38fc7ceafd483d95e27ef4"
+  },
+  "resume": [
+    "Read STATUS.md, docs/15-TEST-PLAN.md, docs/17-RUNTIME-VALIDATION.md and docs/18-ROLLBACK.md",
+    "Verify packages/SHA256SUMS and inspect model/layout in OrangeFox before any manual flash",
+    "Use tools/runtime-monitor.sh read-only after boot; do not call 1092 active until CURRENT_CLOCK_1092=YES",
+    "On any stop criterion, cease load and use the verified 949 rollback ZIP"
+  ]
+}

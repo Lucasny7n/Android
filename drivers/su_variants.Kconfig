@@ -1,0 +1,67 @@
+choice
+	prompt "Select SU variant"
+	optional
+	help
+	  Select which Kernel SU variant to build.
+
+config KSU_NEXT
+	bool "KernelSU Next"
+	select OVERLAY_FS
+	help
+	  Enable KernelSU Next.
+
+config KSU_SUKI
+	bool "SukiSU Ultra"
+	select OVERLAY_FS
+	help
+	  Enable SukiSU Ultra with SUSFS support.
+
+config KSU_XXKSU
+	bool "XXKSU"
+	select OVERLAY_FS
+	help
+	  Enable XXKSU.
+	  Backslashxx's KernelSU fork with additional features.
+
+endchoice
+
+choice
+	prompt "Hook method"
+	optional
+	depends on KSU_NEXT || KSU_SUKI || KSU_XXKSU
+	default KSU_KPROBES_HOOK
+	help
+	  Select which hook method to use.
+
+config KSU_KPROBES_HOOK
+	bool "Use kprobes"
+	help
+	  Enable KPROBES, KRETPROBES and TRACEPOINT hook for KernelSU core.
+	  This should not be used on kernel below 5.10.
+
+config KSU_TRACEPOINT_HOOK
+	bool "Use tracepoints"
+	depends on TRACEPOINTS
+	help
+	  Use tracepoints for function hooking.
+	  Only supported by SukiSU.
+
+config KSU_MANUAL_HOOK
+	bool "Use manual hooks"
+	help
+	  Use manual hooks instead of kprobes.
+
+config KSU_SYSCALL_HOOK
+	bool "KernelSU syscall hook mode."
+	depends on KPROBES && KRETPROBES && HAVE_SYSCALL_TRACEPOINTS
+	help
+	  Enable KPROBES, KRETPROBES and TRACEPOINT hook for KernelSU core.
+	  This should not be used on kernel below 5.10.
+
+endchoice
+
+source "drivers/kernelsu/kernel/Kconfig"
+
+source "drivers/sukisu/kernel/Kconfig"
+
+source "drivers/xxksu/kernel/Kconfig"

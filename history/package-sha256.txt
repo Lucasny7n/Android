@@ -1,0 +1,3 @@
+3db0228e2329239126d8201e8068de76c8834d74eb38fc7ceafd483d95e27ef4  /home/lucas/Área de trabalho/WorkspaceAI/Codex/02-Projects/Floppy-Exynos2100-OC/packages/Floppy_v1.1.2-KSUNext-SUSFS-exynos2100-949-ROLLBACK-20260813-0242.zip
+3db0228e2329239126d8201e8068de76c8834d74eb38fc7ceafd483d95e27ef4  /home/lucas/Área de trabalho/WorkspaceAI/Codex/02-Projects/Floppy-Exynos2100-OC/packages/Floppy_v1.1.2-KSUNext-SUSFS-exynos2100-20260813-0242.zip
+e737a647875cccc6d1a27de6c9396c59b41b5ffca608e72ffc6634772329d8e7  /home/lucas/Área de trabalho/WorkspaceAI/Codex/02-Projects/Floppy-Exynos2100-OC/packages/FloppyOCv1.zip

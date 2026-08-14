@@ -1,0 +1,4 @@
+* floppy-exynos2100-g3d-1092-test cc6540be7336 gpu: fail probe when CAL OPP validation fails
++ floppy-exynos2100-oc-build      af9e70e6af7a (/home/lucas/Área de trabalho/WorkspaceAI/Codex/02-Projects/Floppy-Exynos2100-OC/build/floppy-build) media: mfc: Arm the NAL-Q timeout watchdog on queue start
+  floppy-main                     af9e70e6af7a [origin/floppy-main] media: mfc: Arm the NAL-Q timeout watchdog on queue start
+  remotes/origin/floppy-main      af9e70e6af7a media: mfc: Arm the NAL-Q timeout watchdog on queue start
